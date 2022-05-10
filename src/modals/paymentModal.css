@@ -1,0 +1,18 @@
+.payment__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment__form input {
+    margin-top: 2rem;
+    height: 12vh;
+    border-radius: 10px;
+    font-size: 40px;
+}
+
+.payment__form button {
+    margin-top: 1rem;
+    height: 12vh;
+    font-size: 6vh;
+    border-radius: 15px;
+}

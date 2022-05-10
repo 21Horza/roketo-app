@@ -1,0 +1,18 @@
+h1 {
+    margin-top: 2rem;
+}
+
+img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.login__button {
+    width: 300px;
+}
+
+h2 {
+    text-align: center;
+    align-items: center;
+}

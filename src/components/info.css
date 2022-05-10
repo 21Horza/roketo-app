@@ -1,0 +1,18 @@
+.info__bar {
+    background-color: #1a1732;
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    border-top: 2px solid #fff;
+}
+
+.balance {
+    background-color: rgba(240, 248, 255, 0.082);
+    width: 100px;
+}
+
+.info {
+    margin-right: 20px;
+}

@@ -1,0 +1,22 @@
+.stream__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.stream__form input {
+    margin-top: 1rem;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.stream__form button {
+    margin-top: 1rem;
+    height: 12vh;
+    font-size: 6vh;
+    border-radius: 15px;
+}
+
+.btns {
+    display: flex;
+    align-items: center;
+}
