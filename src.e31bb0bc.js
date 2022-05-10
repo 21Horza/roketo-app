@@ -46941,7 +46941,7 @@ async function initContract() {
   }, nearConfig));
   window.walletConnection = new _nearApiJs.WalletConnection(near);
   window.accountId = window.walletConnection.getAccountId();
-  window.contract = new _nearApiJs.Contract(window.walletConnection.account(), nearConfig.contractName, {
+  window.contract = await new _nearApiJs.Contract(window.walletConnection.account(), nearConfig.contractName, {
     changeMethods: ['ft_transfer_call', 'near_deposit'],
     viewMethods: ['ft_balance_of']
   });
@@ -54688,7 +54688,6 @@ var _mobx = require("mobx");
 
 class Disabled {
   disabled = true;
-  appDisabled = true;
 
   constructor() {
     (0, _mobx.makeAutoObservable)(this);
@@ -54700,14 +54699,6 @@ class Disabled {
 
   setDisabledTrue() {
     this.disabled = true;
-  }
-
-  setAppDisabledTrue() {
-    this.appDisabled = true;
-  }
-
-  setAppDisabledFalse() {
-    this.appDisabled = false;
   }
 
 }
@@ -56146,7 +56137,7 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 const Gym = (0, _mobxReactLite.observer)(() => {
-  const [notStart, setNotStart] = (0, _react.useState)();
+  const [notStart, setNotStart] = (0, _react.useState)(true);
   (0, _react.useEffect)(() => {
     setNotStart(JSON.parse(window.localStorage.getItem('disabled-exercises')));
   }, []);
@@ -56174,7 +56165,7 @@ const Gym = (0, _mobxReactLite.observer)(() => {
     },
     onClick: () => _exercises.default.start(exercise)
   }, "Finish") : /*#__PURE__*/_react.default.createElement("button", {
-    disabled: !notStart,
+    disabled: notStart,
     onClick: () => _exercises.default.finish(exercise)
   }, "Start")))));
 });
@@ -56369,7 +56360,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56280" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55727" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
