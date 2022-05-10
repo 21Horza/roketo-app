@@ -46931,7 +46931,7 @@ var _config = _interopRequireDefault(require("./config"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const nearConfig = (0, _config.default)("development" || 'development');
+const nearConfig = (0, _config.default)('testnet');
 
 async function initContract() {
   const near = await (0, _nearApiJs.connect)(Object.assign({
@@ -46941,7 +46941,7 @@ async function initContract() {
   }, nearConfig));
   window.walletConnection = new _nearApiJs.WalletConnection(near);
   window.accountId = window.walletConnection.getAccountId();
-  window.contract = new _nearApiJs.Contract(window.walletConnection.account(), 'wrap.testnet', {
+  window.contract = new _nearApiJs.Contract(window.walletConnection.account(), nearConfig.contractName, {
     changeMethods: ['ft_transfer_call', 'near_deposit'],
     viewMethods: ['ft_balance_of']
   });
@@ -56369,7 +56369,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53342" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56280" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
